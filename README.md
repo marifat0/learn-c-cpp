@@ -1,2 +1,2 @@
-# learn-cpp
-C++
+# learn-c-cpp
+C/C++
