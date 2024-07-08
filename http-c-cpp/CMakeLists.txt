@@ -17,3 +17,6 @@ target_include_directories(RESTful_API PUBLIC /usr/local/include)
 # Link libraries
 target_link_libraries(RESTful_API PUBLIC /usr/local/lib/libmicrohttpd.dylib)
 
+# Enable AddressSanitizer
+# set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=address")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
