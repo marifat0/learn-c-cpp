@@ -17,3 +17,8 @@ target_sources(learnc
         src/main.c
 )
 
+target_include_directories(learnc
+    PRIVATE
+        src/include
+)
+
