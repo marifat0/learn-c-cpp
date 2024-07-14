@@ -1,4 +1,5 @@
 #import "Foundation/Foundation.h"
+#include <stdio.h>
 #import "headers/XYZPerson.h"
 
 int main(int argc, const char * argv[]) {
@@ -9,8 +10,8 @@ int main(int argc, const char * argv[]) {
         XYZPerson *person = [[XYZPerson alloc] init];
 
         [person sayHello];
-        [person release];
 
+        printf("person %p\n", person);
         NSLog(@"Press any key to exit...");
         getchar();
     }

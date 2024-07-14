@@ -18,6 +18,7 @@ enable_language(OBJCXX)
 
 add_definitions(-DRC_PLATFORM_MAC)
 add_definitions(-DRC_PLATFORM_UNIX)
+add_definitions(-fobjc-arc)
 
 add_executable(myObjc)
 target_sources(myObjc
@@ -30,4 +31,8 @@ target_link_libraries(myObjc
     "-framework Foundation"
     "-framework AppKit"
 )
-set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+# Put output Objective-C binary in the bin directory
+set_target_properties(myObjc
+    PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+)
