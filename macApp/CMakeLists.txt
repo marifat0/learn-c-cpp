@@ -10,7 +10,7 @@ project(LEARN_OBJC
 set(CMAKE_C_STANDARD 11)
 set(OBJCXX_STANDARD 11)
 set(TARGET tgt PROPERTY OBJCXX_STANDARD 11)
-set(CMAKE_C_FLAGS "-x objective-c --std=gnu11")
+set(CMAKE_C_FLAGS "-x objective-c -fobjc-arc")
 set(EXPORT_COMPILE_COMMANDS ON)
 
 enable_language(OBJC)
@@ -23,12 +23,11 @@ add_executable(myObjc)
 target_sources(myObjc
     PRIVATE
         src/main.m
+        src/headers/impl/XYZPerson.m
 )
-# Set the output directory for the build executables to bin
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-
 target_link_libraries(myObjc
     PRIVATE
     "-framework Foundation"
     "-framework AppKit"
 )
+set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
