@@ -7,5 +7,6 @@
 @property (readonly) NSDate *birthdate;
 
 - (void)sayHello;
+- (void)saySomething:(NSString *)greeting;
 
 @end
